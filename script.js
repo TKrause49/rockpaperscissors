@@ -24,4 +24,17 @@ function playRound(playerChoice, computer) {
     player === computer ? 'Draw!' : 'Please choose a valid weapon.';
 }
 
-console.log(playRound(prompt('Choose your weapon:'), getComputerChoice()));
+// console.log(playRound(prompt('Choose your weapon:'), getComputerChoice()));
+
+
+function game() {
+    let counter = 0;
+    for (let i = 0; i < 5; i++) {
+        let result = playRound(prompt('Choose your weapon:'), getComputerChoice());
+        console.log(result);
+        result === 'You WIN!' ? counter++ : result === 'Draw!' ? i-- : null;
+    }
+    console.log(counter > 2 ? 'You are the WINNER!' : 'You are the LOSER!');
+};
+
+game();
