@@ -1,34 +1,27 @@
-// console.log('Hello World');
-
 function getComputerChoice() {
 let choice = Math.floor(Math.random()*3+1);
 
-if (choice === 1){
-   return 'rock';
-} else if (choice === 2){
-    return 'paper';
-} else if (choice === 3){
-    return 'scissors';
-}};
+    if (choice === 1){
+        return 'rock';
+    } else if (choice === 2){
+        return 'paper';
+    } else if (choice === 3){
+        return 'scissors';
+    }
+};
 
-// getComputerChoice();
+function playRound(playerChoice, computer) {
+    let player = playerChoice.toLowerCase();
+    // console.log(player);
+    // console.log(computer);
 
-// let playerChoice= '';
-
-function playRound(playerChoice, computerChoice) {
-    // playerChoice = prompt('Choose your weapon:');
-    playerChoice.toLowerCase;
-    // computerChoice = getComputerChoice();
-
-    return playerChoice = 'rock' && computerChoice === 'paper' ? 'You lose!' :
-    playerChoice = 'rock' && computerChoice === 'scissors' ? 'You WIN!' :
-    playerChoice = 'scissors' && computerChoice === 'rock' ? 'You lose!' :
-    playerChoice = 'scissors' && computerChoice === 'paper' ? 'You WIN!' :
-    playerChoice = 'paper' && computerChoice === 'scissors' ? 'You lose!' :
-    playerChoice = 'paper' && computerChoice === 'rock' ? 'You WIN!' :
-    playerChoice = computerChoice ? 'Draw!' : 'error';
-
-
+    return player === 'rock' && computer === 'paper' ? 'You lose!' :
+    player === 'rock' && computer === 'scissors' ? 'You WIN!' :
+    player === 'scissors' && computer === 'rock' ? 'You lose!' :
+    player === 'scissors' && computer === 'paper' ? 'You WIN!' :
+    player === 'paper' && computer === 'scissors' ? 'You lose!' :
+    player === 'paper' && computer === 'rock' ? 'You WIN!' :
+    player === computer ? 'Draw!' : 'Please choose a valid weapon.';
 }
 
 console.log(playRound(prompt('Choose your weapon:'), getComputerChoice()));
